@@ -4,12 +4,13 @@ const translations = {
     // 导航栏
     nav_about: '关于我',
     nav_education: '教育背景',
-    nav_experience: '工作经历',
+    nav_experience: '项目经历',
     nav_hobbies: '兴趣爱好',
     nav_projects: '项目',
     nav_contact: '联系我',
     nav_basic_info: '基本信息',
     nav_skills: '专业技能',
+    nav_extracurricular: '课外活动',
     
     // 语言选择器
     language_selector: '语言',
@@ -23,7 +24,7 @@ const translations = {
     about_title: '关于我',
     about_p1: '你好！我是一名充满热情的开发者，专注于创建美观且用户友好的网站。我热爱学习新技术并将创意转化为现实。',
     about_p2: '我拥有5年的前端开发经验，熟悉现代Web开发技术栈。在工作中，我注重用户体验和代码质量，努力打造高效、美观的数字产品。',
-    skills_title: '技能专长',
+    skills_title: '专业技能',
     
     // 基本信息
     basic_info_title: '基本信息',
@@ -32,68 +33,83 @@ const translations = {
     gender: '性别',
     male: '男',
     female: '女',
+    age: '年龄',
     phone: '手机号码',
     email: '邮箱',
-    nationality: '籍贯',
+    nationality: '国籍',
     japan: '日本',
     education_level: '学历',
+    weixin: '微信',
+    address: '地址',
+    age_unit: '岁',
+    present: '至今',
+    education_status: '本科大四',
+    activities: '活动内容',
+    skill_hsk: '汉语水平考试 (hsk6级)',
+    skill_fullstack: 'springboot+vue全栈开发',
+    skill_dl: 'python+pytorch深度学习',
+    skill_web: 'HTML+CSS+JavaScript',
+    skill_db: 'MySQL',
+    skill_java: 'Java',
+    skill_llm: '深度学习大语言模型的理解与应用',
+    skill_jlpt: '日语N1水平',
+    skill_bookkeeping: '全商簿记鉴定2级(日本)',
+    skill_it: '情报处理鉴定2级(日本)',
+    address_jp: '日本 福冈县春日市昇町7丁目90番地',
+    address_cn: '中国 辽宁省沈阳市大东区大北关街75号A3-2-6-1',
     
     // 教育背景
     education_title: '教育背景',
-    edu1_degree: '计算机科学与技术学士',
-    edu1_school: '北京大学',
-    edu1_courses: '主修课程：数据结构、算法分析、计算机网络、Web开发技术',
-    edu2_degree: '人机交互硕士',
-    edu2_school: '清华大学',
-    edu2_courses: '研究方向：用户体验设计、交互设计模式、Web可访问性',
-    edu2_thesis: '毕业论文：《移动应用中的微交互设计研究》',
-    major: '计算机科学与技术本科',
+    edu1_school: '北京理工大学',
+    edu1_major: '计算机科学与技术',
     main_courses: '主修课程：',
+    edu1_courses: 'C++面向对象、数据结构与算法、C语言程序设计、操作系统、汇编语言与接口技术、计算机系统导论、计算机网络、计算机组成原理、高级语言程序设计、工程制图',
+    edu2_school: '福冈县立博多青松高等学校',
+    edu2_major: '情报科学科（商学科）',
+    edu2_courses: '基础高中教育',
     
-    // 工作经历
-    experience_title: '工作经历',
-    exp1_title: '高级前端开发工程师',
-    exp1_company: '科技创新公司',
-    exp1_duty1: '负责公司主要产品的前端架构设计和开发',
-    exp1_duty2: '优化网站性能，提升用户体验和页面加载速度',
-    exp1_duty3: '指导初级开发人员，组织技术分享会',
-    exp1_duty4: '与设计团队协作，实现复杂交互效果和UI组件',
-    exp2_title: '前端开发工程师',
-    exp2_company: '互联网金融公司',
-    exp2_duty1: '参与开发公司金融产品的Web应用',
-    exp2_duty2: '使用React和Redux构建用户界面',
-    exp2_duty3: '实现响应式设计，确保在各种设备上的良好体验',
-    exp2_duty4: '与后端团队协作，优化API调用和数据处理',
+    // 项目经历
+    experience_title: '项目经历',
+    project1_title: '图书借阅管理系统',
+    project1_desc: '开发一个完整的图书借阅管理系统，具备完善支持用户在线借阅、还书、查询书籍等功能。',
+    project1_tech: '在团队合作开发中，我负责前端设计和后端API的实现，选择Spring Boot框架进行开发。前端使用Vuejs，数据库使用MySQL存储用户与书籍信息。项目包括用户登录、书籍查询、借阅历史查询，根据登陆的用户类型（管理员或普通用户）提供不同功能。',
+    
+    project2_title: 'AI图像识别系统',
+    project2_desc: '手写数字识别系统，该系统可以通过图像识别技术识别用户手写数字。',
+    project2_tech: '在该项目中，核心功能是使用 PyTorch 训练模型实现 CNN 模型实现图像的识别功能。系统使用 Flask、springboot、vue、MySQL 等技术构建，我主要负责前后端交互部分。',
+    
+    project3_title: '日语文本信息抽取与知识图谱构建系统',
+    project3_desc: '基于大语言模型构建日语文本信息抽取系统，关系三元组，从而实现对日语文本内容的分析。',
+    project3_tech: '该项目的核心在于，通过对大量日语语料的研究，提取文本中出现的实体概念和关系，并整合成关系三元组图谱。项目中，通过使用字符级和词级别的特征处理，解决了日语文本分析的挑战。',
+    
+    project4_title: '软件开发实习 - 北京理工大学计算机学院',
+    project4_desc: '基于Qt的远程通信软件',
+    project4_tech: '在开发局域网下的实时通信软件过程中，我负责了UI设计与实时文本信息传递功能的实现。确保用户可以方便地发送和接收消息。',
+    
+    view_project: '查看项目',
     project_desc: '项目描述：',
     project_tech: '项目技术：',
-    view_project: '查看项目',
     
-    // 兴趣爱好
-    hobbies_title: '兴趣爱好',
-    hobby1_title: '阅读',
-    hobby1_desc: '我喜欢阅读技术书籍和科幻小说，这帮助我拓展思维和获取新知识。',
-    hobby2_title: '户外活动',
-    hobby2_desc: '周末喜欢徒步旅行和登山，亲近自然让我保持身心健康。',
-    hobby3_title: '摄影',
-    hobby3_desc: '我热爱摄影，尤其是风景和街头摄影，捕捉生活中的美丽瞬间。',
-    hobby4_title: '下棋',
-    hobby4_desc: '国际象棋和围棋是我放松时的选择，它们帮助我提高逻辑思维能力。',
+    // 专业技能
+    skills_title: '专业技能',
     
-    // 项目
-    projects_title: '项目展示',
-    project1_title: '响应式电商平台',
-    project1_desc: '使用React开发的现代电子商务网站，包含产品展示、购物车和支付系统。',
-    project2_title: '企业管理系统',
-    project2_desc: '基于Vue.js的企业内部管理系统，实现了数据可视化、任务跟踪和报表生成。',
-    project3_title: '在线学习平台',
-    project3_desc: '教育类Web应用，支持视频课程、在线测验和学习进度追踪。',
-    learn_more: '了解更多',
+    // 课外活动
+    extracurricular_title: '课外活动',
+    aikido_title: '合气道部',
+    aikido_content: '・积极参与合气道训练，掌握基本技法\n・参与社团演武和交流活动，出席了进几年的合气道全国演武大会\n・在福冈天神道场进行合气道训练\n・培养了团队协作精神和自我修养能力',
+    
+    hiking_title: '登山社团',
+    hiking_content: '・定期参与登山活动，提高体能和意志力\n・学习户外生存技能和安全知识\n・参与社团组织的各类户外探险活动',
+    
+    japanese_club_title: '日语文化社团',
+    japanese_club_content: '・组织日语社团活动，促进中日文化交流\n・参与每年学校举办的日本文化节活动的策划和实施\n・协助举办日语演讲比赛和文化讲座',
+    
+    volunteer_title: '学校组织的志愿者活动',
+    volunteer_content: '・留学生迎新志愿者活动\n・国际文化节志愿者活动\n・运动会志愿者活动\n・中日和平友好条约缔结大会与交流会\n・CATTI杯大赛志愿者',
     
     // 联系方式
     contact_title: '联系方式',
-    contact_address: '地址: 北京市海淀区',
-    note: '您也可以直接发送邮件或通过以下方式联系我',
-    send_email: '发送邮件',
+    contact_info: '联系信息',
     form_note: '填写以下表单，我会尽快回复您',
     your_name: '您的姓名',
     your_email: '您的邮箱',
@@ -120,12 +136,13 @@ const translations = {
     // Navigation
     nav_about: 'About Me',
     nav_education: 'Education',
-    nav_experience: 'Experience',
+    nav_experience: 'Projects',
     nav_hobbies: 'Hobbies',
     nav_projects: 'Projects',
     nav_contact: 'Contact',
     nav_basic_info: 'Basic Info',
     nav_skills: 'Skills',
+    nav_extracurricular: 'Extracurricular',
     
     // Language selector
     language_selector: 'Language',
@@ -135,12 +152,6 @@ const translations = {
     subtitle: 'Frontend Developer / UI Designer',
     resume_title: 'Resume',
     
-    // About
-    about_title: 'About Me',
-    about_p1: 'Hello! I am a passionate developer focused on creating beautiful and user-friendly websites. I love learning new technologies and turning ideas into reality.',
-    about_p2: 'I have 5 years of frontend development experience and am familiar with modern web development technology stack. In my work, I focus on user experience and code quality, striving to create efficient and beautiful digital products.',
-    skills_title: 'Skills',
-    
     // Basic Info
     basic_info_title: 'Basic Information',
     name: 'Name',
@@ -148,74 +159,89 @@ const translations = {
     gender: 'Gender',
     male: 'Male',
     female: 'Female',
+    age: 'Age',
     phone: 'Phone',
     email: 'Email',
     nationality: 'Nationality',
     japan: 'Japan',
     education_level: 'Education',
+    weixin: 'WeChat',
+    address: 'Address',
+    age_unit: 'years old',
+    present: 'Present',
+    education_status: 'Senior (4th year undergraduate)',
+    activities: 'Activities',
+    skill_hsk: 'Chinese Proficiency Test (HSK Level 6)',
+    skill_fullstack: 'Full-stack Development with Spring Boot + Vue',
+    skill_dl: 'Deep Learning with Python + PyTorch',
+    skill_web: 'HTML+CSS+JavaScript',
+    skill_db: 'MySQL',
+    skill_java: 'Java',
+    skill_llm: 'Understanding and Application of Deep Learning Large Language Models',
+    skill_jlpt: 'Japanese Language Proficiency Test N1',
+    skill_bookkeeping: 'Japan Commercial Bookkeeping Level 2',
+    skill_it: 'Japan Information Technology Certification Level 2',
+    address_jp: '7-90 Nobori-cho, Kasuga City, Fukuoka Prefecture, Japan',
+    address_cn: 'A3-2-6-1, 75 Dabeiguan Street, Dadong District, Shenyang City, Liaoning Province, China',
     
     // Education
     education_title: 'Education',
-    edu1_degree: 'Bachelor of Computer Science and Technology',
-    edu1_school: 'Peking University',
-    edu1_courses: 'Major courses: Data Structures, Algorithm Analysis, Computer Networks, Web Development',
-    edu2_degree: 'Master of Human-Computer Interaction',
-    edu2_school: 'Tsinghua University',
-    edu2_courses: 'Research focus: User Experience Design, Interaction Design Patterns, Web Accessibility',
-    edu2_thesis: 'Thesis: "Research on Micro-interaction Design in Mobile Applications"',
-    major: 'Bachelor of Computer Science and Technology',
+    edu1_school: 'Beijing Institute of Technology',
+    edu1_major: 'Computer Science and Technology',
     main_courses: 'Main Courses:',
+    edu1_courses: 'Object-Oriented C++, Data Structures and Algorithms, C Programming, Operating Systems, Assembly Language and Interface Technology, Introduction to Computer Systems, Computer Networks, Computer Architecture, Advanced Programming Languages, Engineering Drawing',
+    edu2_school: 'Fukuoka Prefectural Hakata Seisho High School',
+    edu2_major: 'Information Science (Business)',
+    edu2_courses: 'Basic High School Education',
     
-    // Experience
-    experience_title: 'Experience',
-    exp1_title: 'Senior Frontend Developer',
-    exp1_company: 'Tech Innovation Company',
-    exp1_duty1: 'Responsible for frontend architecture design and development of main products',
-    exp1_duty2: 'Optimize website performance, improve user experience and page loading speed',
-    exp1_duty3: 'Guide junior developers and organize technical sharing sessions',
-    exp1_duty4: 'Collaborate with design teams to implement complex interaction effects and UI components',
-    exp2_title: 'Frontend Developer',
-    exp2_company: 'Internet Finance Company',
-    exp2_duty1: 'Participate in developing web applications for company financial products',
-    exp2_duty2: 'Build user interfaces using React and Redux',
-    exp2_duty3: 'Implement responsive design to ensure good experience across various devices',
-    exp2_duty4: 'Collaborate with backend teams to optimize API calls and data processing',
-    project_desc: 'Project Description:',
-    project_tech: 'Technologies:',
+    // Project Experience
+    experience_title: 'Project Experience',
+    project1_title: 'Library Management System',
+    project1_desc: 'Development of a complete library management system with online borrowing, returning, and book search functions.',
+    project1_tech: 'In team development, I was responsible for frontend design and backend API implementation using Spring Boot framework. Frontend was built with Vuejs, and MySQL database was used for user and book information management. Implemented user login, book search, and borrowing history features with different functionalities based on user type (admin or regular user).',
+    
+    project2_title: 'AI Image Recognition System',
+    project2_desc: 'Handwritten digit recognition system - A system that uses image recognition technology to identify user-written numbers.',
+    project2_tech: 'Implemented image recognition functionality using PyTorch to train CNN models. Built the system using Flask, Spring Boot, Vue, and MySQL technologies. Responsible for frontend and backend integration.',
+    
+    project3_title: 'Japanese Text Information Extraction and Knowledge Graph Construction System',
+    project3_desc: 'Japanese text information extraction system and relationship triple construction based on large language models.',
+    project3_tech: 'Analyzed large Japanese corpora to extract entity concepts and relationships to construct relationship triple graphs. Solved Japanese text analysis challenges through character-level and word-level feature processing. Conducted Japanese text analysis using deep learning models.',
+    
+    project4_title: 'Software Development Internship - School of Computer Science, BIT',
+    project4_desc: 'Qt-based Remote Communication Software',
+    project4_tech: 'In LAN real-time communication software development, responsible for UI design and real-time text message transmission implementation. Achieved fast and stable message transfer based on efficient communication protocols.',
+    
     view_project: 'View Project',
+    project_desc: 'Project Description:',
+    project_tech: 'Technologies Used:',
     
-    // Hobbies
-    hobbies_title: 'Hobbies',
-    hobby1_title: 'Reading',
-    hobby1_desc: 'I enjoy reading technical books and science fiction, which helps me expand my thinking and acquire new knowledge.',
-    hobby2_title: 'Outdoor Activities',
-    hobby2_desc: 'I like hiking and mountain climbing on weekends. Being close to nature keeps me physically and mentally healthy.',
-    hobby3_title: 'Photography',
-    hobby3_desc: 'I love photography, especially landscape and street photography, capturing beautiful moments in life.',
-    hobby4_title: 'Chess',
-    hobby4_desc: 'Chess and Go are my choices for relaxation. They help me improve my logical thinking ability.',
+    // Professional Skills
+    skills_title: 'Professional Skills',
     
-    // Projects
-    projects_title: 'Projects',
-    project1_title: 'Responsive E-commerce Platform',
-    project1_desc: 'A modern e-commerce website developed with React, featuring product display, shopping cart, and payment system.',
-    project2_title: 'Enterprise Management System',
-    project2_desc: 'Enterprise internal management system based on Vue.js, implementing data visualization, task tracking, and report generation.',
-    project3_title: 'Online Learning Platform',
-    project3_desc: 'Educational web application supporting video courses, online quizzes, and learning progress tracking.',
-    learn_more: 'Learn More',
+    // Extracurricular Activities
+    extracurricular_title: 'Extracurricular Activities',
+    aikido_title: 'Aikido Club',
+    aikido_content: 'Activities:\n・Mastered basic Aikido techniques\n・Participated in demonstrations and exchange activities\n・Attended National Aikido Demonstration Conventions\n・Trained at Fukuoka Tenjin Dojo\n・Developed teamwork and self-cultivation abilities',
+    
+    hiking_title: 'Hiking Club',
+    hiking_content: 'Activities:\n・Regular participation in hiking activities\n・Improved physical fitness and willpower\n・Learned outdoor survival skills and safety knowledge\n・Participated in club-organized outdoor adventures',
+    
+    japanese_club_title: 'Japanese Culture Club',
+    japanese_club_content: 'Activities:\n・Organized Japanese club activities\n・Promoted China-Japan cultural exchange\n・Planned and implemented school Japanese cultural festivals\n・Assisted in organizing Japanese speech contests and cultural lectures',
+    
+    volunteer_title: 'School Volunteer Activities',
+    volunteer_content: 'Activities:\n・International student welcome volunteer\n・International cultural festival volunteer\n・Sports day volunteer\n・China-Japan Peace and Friendship Treaty Convention and Exchange Meeting\n・CATTI Cup Competition volunteer',
     
     // Contact
     contact_title: 'Contact',
-    contact_address: 'Address: Haidian District, Beijing',
-    note: 'You can also contact me directly via email or through the following methods',
-    send_email: 'Send Email',
+    contact_info: 'Contact Information',
     form_note: 'Fill out the form below and I will get back to you as soon as possible',
     your_name: 'Your Name',
     your_email: 'Your Email',
     your_message: 'Your Message',
     send_message: 'Send Message',
-    form_help: 'Clicking send will open your email client. Please confirm sending the email',
+    form_help: 'Clicking send will open your email client',
     
     // Footer
     copyright: 'Copyright',
@@ -224,148 +250,181 @@ const translations = {
     // Form messages
     sending: 'Sending...',
     success_title: 'Success',
-    success_message: 'Your message has been sent successfully! I will reply to you as soon as possible.',
+    success_message: 'Your message has been sent! I will reply as soon as possible.',
     error_title: 'Error',
     error_message: 'Error sending message. Please try again later.',
-    email_ready: 'Email client has been opened. Please send the email to complete the contact.',
-    connection_error: 'Unable to connect to the server. Please contact me directly via email.',
-    confirm_email: 'Would you like to use the email client to send a message?'
+    email_ready: 'Email client has been opened.',
+    connection_error: 'Unable to connect to server. Please contact me directly via email.',
+    confirm_email: 'Would you like to send an email?'
   },
   
   ja: {
-    // ナビゲーション
-    nav_about: '私について',
+    // 导航栏
+    nav_about: '自己紹介',
     nav_education: '学歴',
-    nav_experience: '職歴',
+    nav_experience: 'プロジェクト経験',
     nav_hobbies: '趣味',
     nav_projects: 'プロジェクト',
-    nav_contact: 'お問い合わせ',
+    nav_contact: '連絡先',
     nav_basic_info: '基本情報',
-    nav_skills: 'スキル',
+    nav_skills: '専門スキル',
+    nav_extracurricular: '課外活動',
     
     // Language selector
     language_selector: '言語',
     
-    // ヘッダー
-    welcome: '私の個人サイトへようこそ',
-    subtitle: 'フロントエンド開発者 / UIデザイナー',
+    // 头部
+    welcome: 'ようこそ',
+    subtitle: 'フロントエンド開発者',
     resume_title: '履歴書',
     
-    // 私について
-    about_title: '私について',
-    about_p1: 'こんにちは！私は美しく使いやすいウェブサイトの作成に情熱を持つ開発者です。新しい技術を学び、アイデアを現実にすることが大好きです。',
-    about_p2: '5年間のフロントエンド開発経験があり、最新のWeb開発技術スタックに精通しています。仕事では、ユーザー体験とコード品質に重点を置き、効率的で美しいデジタル製品の作成に努めています。',
-    skills_title: 'スキル',
+    // 关于我
+    about_title: '自己紹介',
+    about_p1: 'はじめまして！私は美しく使いやすいウェブサイトの作成に情熱を持つ開発者です。新しい技術を学び、アイデアを実現することが大好きです。',
+    about_p2: 'フロントエンド開発の経験があり、最新のWeb開発技術に精通しています。ユーザー体験とコード品質を重視し、効率的で美しいデジタルプロダクトの作成に努めています。',
+    skills_title: '専門スキル',
     
-    // 基本情報
+    // 基本信息
     basic_info_title: '基本情報',
     name: '氏名',
     birth_date: '生年月日',
     gender: '性別',
     male: '男性',
     female: '女性',
-    phone: '電話番号',
+    age: '年齢',
+    phone: '携帯電話',
     email: 'メール',
     nationality: '国籍',
     japan: '日本',
     education_level: '学歴',
+    weixin: 'WeChat',
+    address: '住所',
+    age_unit: '歳',
+    present: '現在',
+    education_status: '学部4年生',
+    activities: '活動内容',
+    skill_hsk: '中国語検定試験（HSK6級）',
+    skill_fullstack: 'Spring Boot + Vueフルスタック開発',
+    skill_dl: 'Python + PyTorch深層学習',
+    skill_web: 'HTML+CSS+JavaScript',
+    skill_db: 'MySQL',
+    skill_java: 'Java',
+    skill_llm: '深層学習大規模言語モデルの理解と応用',
+    skill_jlpt: '日本語能力試験N1',
+    skill_bookkeeping: '全商簿記検定2級',
+    skill_it: '情報処理検定2級',
+    address_jp: '〒816-0851 福岡県春日市昇町7丁目90番地',
+    address_cn: '中国遼寧省瀋陽市大東区大北関街75号A3-2-6-1',
     
     // 教育背景
     education_title: '学歴',
-    edu1_degree: 'コンピュータ科学技術学士',
-    edu1_school: '北京大学',
-    edu1_courses: '主な科目：データ構造、アルゴリズム分析、コンピュータネットワーク、Web開発技術',
-    edu2_degree: 'ヒューマンコンピュータインタラクション修士',
-    edu2_school: '清華大学',
-    edu2_courses: '研究分野：ユーザーエクスペリエンスデザイン、インタラクションデザインパターン、Webアクセシビリティ',
-    edu2_thesis: '論文：「モバイルアプリケーションにおけるマイクロインタラクションデザイン研究」',
-    major: 'コンピュータサイエンス学士',
-    main_courses: '主な科目：',
+    edu1_school: '北京理工大学',
+    edu1_major: 'コンピュータサイエンス学科',
+    main_courses: '主な履修科目：',
+    edu1_courses: 'C++オブジェクト指向、データ構造とアルゴリズム、C言語プログラミング、オペレーティングシステム、アセンブリ言語とインターフェース技術、コンピュータシステム入門、コンピュータネットワーク、コンピュータアーキテクチャ、高級言語プログラミング、工業製図',
+    edu2_school: '福岡県立博多青松高等学校',
+    edu2_major: '情報科学科（商学科）',
+    edu2_courses: '基礎高校教育',
     
-    // 職歴
-    experience_title: '職歴',
-    exp1_title: 'シニアフロントエンド開発者',
-    exp1_company: '技術革新企業',
-    exp1_duty1: '主要製品のフロントエンドアーキテクチャ設計と開発を担当',
-    exp1_duty2: 'ウェブサイトのパフォーマンスを最適化し、ユーザー体験とページ読み込み速度を向上',
-    exp1_duty3: '若手開発者の指導と技術共有セッションの開催',
-    exp1_duty4: 'デザインチームと協力して複雑なインタラクションエフェクトとUIコンポーネントを実装',
-    exp2_title: 'フロントエンド開発者',
-    exp2_company: 'インターネット金融企業',
-    exp2_duty1: '会社の金融商品のWebアプリケーション開発に参加',
-    exp2_duty2: 'ReactとReduxを使用してユーザーインターフェースを構築',
-    exp2_duty3: 'レスポンシブデザインを実装し、様々なデバイスでの優れた体験を確保',
-    exp2_duty4: 'バックエンドチームと協力してAPIコールとデータ処理を最適化',
+    // 项目经历
+    experience_title: 'プロジェクト経験',
+    project1_title: '図書貸出管理システム',
+    project1_desc: 'オンラインでの本の貸出、返却、検索などの機能を備えた完全な図書貸出管理システムの開発。',
+    project1_tech: 'チーム開発において、フロントエンド設計とバックエンドAPIの実装を担当。Spring Bootフレームワークを使用し、フロントエンドはVuejs、データベースはMySQLを使用してユーザーと書籍情報を管理。ユーザーログイン、書籍検索、貸出履歴照会機能を実装し、ログインユーザーの種類（管理者または一般ユーザー）に応じて異なる機能を提供。',
+    
+    project2_title: 'AI画像認識システム',
+    project2_desc: '手書き数字認識システム - ユーザーが書いた数字を画像認識技術で識別するシステム。',
+    project2_tech: 'PyTorchを使用してCNNモデルを訓練し、画像認識機能を実装。Flask、Spring Boot、Vue、MySQLなどの技術を使用してシステムを構築。フロントエンドとバックエンドの連携を担当。',
+    
+    project3_title: '日本語テキスト情報抽出・知識グラフ構築システム',
+    project3_desc: '大規模言語モデルを基にした日本語テキスト情報抽出システムと関係トリプルの構築。',
+    project3_tech: '大量の日本語コーパスを分析し、テキスト中の実体概念と関係を抽出して関係トリプルグラフを構築。文字レベルと単語レベルの特徴処理により、日本語テキスト分析の課題を解決。深層学習モデルを使用して日本語テキスト分析を実施。',
+    
+    project4_title: 'ソフトウェア開発インターンシップ - 北京理工大学コンピュータ学院',
+    project4_desc: 'Qtベースのリモート通信ソフトウェア',
+    project4_tech: 'LANでのリアルタイム通信ソフトウェア開発において、UIデザインとリアルタイムテキストメッセージ送信機能の実装を担当。効率的な通信プロトコルを基に、メッセージの高速かつ安定した転送を実現。',
+    
+    view_project: 'プロジェクト詳細',
     project_desc: 'プロジェクト概要：',
     project_tech: '使用技術：',
-    view_project: 'プロジェクトを見る',
     
-    // 趣味
-    hobbies_title: '趣味',
-    hobby1_title: '読書',
-    hobby1_desc: '技術書やSF小説を読むのが好きで、思考を広げ、新しい知識を得るのに役立っています。',
-    hobby2_title: '屋外活動',
-    hobby2_desc: '週末はハイキングや登山が好きです。自然に近づくことで心身の健康を保っています。',
-    hobby3_title: '写真撮影',
-    hobby3_desc: '写真撮影、特に風景やストリート写真が大好きで、生活の中の美しい瞬間を捉えています。',
-    hobby4_title: '囲碁・将棋',
-    hobby4_desc: 'チェスと囲碁はリラックスするための選択肢です。論理的思考能力を向上させるのに役立ちます。',
+    // 专业技能
+    skills_title: '専門スキル',
     
-    // プロジェクト
-    projects_title: 'プロジェクト',
-    project1_title: 'レスポンシブEコマースプラットフォーム',
-    project1_desc: 'Reactで開発された現代的なEコマースウェブサイトで、商品表示、ショッピングカート、決済システムを備えています。',
-    project2_title: '企業管理システム',
-    project2_desc: 'Vue.jsに基づく企業内部管理システムで、データ可視化、タスク追跡、レポート生成を実装しています。',
-    project3_title: 'オンライン学習プラットフォーム',
-    project3_desc: 'ビデオコース、オンラインクイズ、学習進捗追跡をサポートする教育用Webアプリケーション。',
-    learn_more: '詳細を見る',
+    // 课外活动
+    extracurricular_title: '課外活動',
+    aikido_title: '合気道部',
+    aikido_content: '活動内容：\n・合気道の基本技術の習得\n・演武会や交流活動への参加\n・全国合気道演武大会への出席\n・福岡天神道場での合気道練習\n・チームワークと自己修養能力の向上',
     
-    // お問い合わせ
-    contact_title: 'お問い合わせ',
-    contact_address: '住所：北京市海淀区',
-    note: '以下の方法で直接メールでお問い合わせいただくこともできます',
-    send_email: 'メールを送信',
-    form_note: '以下のフォームに記入していただければ、できるだけ早くご返信いたします',
+    hiking_title: '登山サークル',
+    hiking_content: '活動内容：\n・定期的な登山活動への参加\n・体力と精神力の向上\n・アウトドアサバイバルスキルと安全知識の習得\n・サークル主催の野外活動への参加',
+    
+    japanese_club_title: '日本語文化サークル',
+    japanese_club_content: '活動内容：\n・日本語サークル活動の運営\n・中日文化交流の促進\n・学校の日本文化祭の企画と実施\n・日本語スピーチコンテストと文化講座の開催支援',
+    
+    volunteer_title: '学校ボランティア活動',
+    volunteer_content: '活動内容：\n・留学生歓迎ボランティア\n・国際文化祭ボランティア\n・運動会ボランティア\n・日中平和友好条約締結大会と交流会\n・CATTIカップ大会ボランティア',
+    
+    // 联系方式
+    contact_title: '連絡先',
+    contact_info: '連絡先情報',
+    form_note: '以下のフォームにご記入ください。できるだけ早くご返信いたします。',
     your_name: 'お名前',
     your_email: 'メールアドレス',
     your_message: 'メッセージ',
-    send_message: 'メッセージを送信',
-    form_help: '送信をクリックするとメールクライアントが開きます。メールの送信を確認してください',
+    send_message: '送信',
+    form_help: '送信をクリックするとメールクライアントが開きます',
     
-    // フッター
+    // 页脚
     copyright: '著作権',
     made_with_love: '❤️を込めて作成',
     
-    // フォームメッセージ
+    // 表单消息
     sending: '送信中...',
-    success_title: '成功',
-    success_message: 'メッセージは正常に送信されました！できるだけ早くご返信いたします。',
+    success_title: '送信完了',
+    success_message: 'メッセージを送信しました。できるだけ早くご返信いたします。',
     error_title: 'エラー',
-    error_message: 'メッセージの送信中にエラーが発生しました。後でもう一度お試しください。',
-    email_ready: 'メールクライアントが開かれました。連絡を完了するにはメールを送信してください。',
-    connection_error: 'サーバーに接続できません。直接メールでお問い合わせください。',
-    confirm_email: 'メールクライアントを使用してメッセージを送信しますか？'
+    error_message: '送信中にエラーが発生しました。後ほど再度お試しください。',
+    email_ready: 'メールクライアントを開きました。',
+    connection_error: 'サーバーに接続できません。直接メールでご連絡ください。',
+    confirm_email: 'メールを送信しますか？'
   }
 };
 
 // 当前语言
 let currentLang = 'zh';
 
-// 切换语言函数
+// 添加语言切换动画效果
 function switchLanguage(lang) {
-  if (!translations[lang]) return;
-  
-  currentLang = lang;
-  
-  // 保存语言选择到本地存储
-  localStorage.setItem('preferred-language', lang);
-  
-  // 更新HTML元素的文本
-  updatePageContent();
-  
-  // 更新HTML的lang属性
-  document.documentElement.lang = lang === 'ja' ? 'ja' : (lang === 'en' ? 'en' : 'zh-CN');
+    localStorage.setItem('preferred_language', lang);
+    document.body.style.opacity = 0;
+    
+    setTimeout(() => {
+        currentLang = lang;
+        updatePageContent();
+        showLanguageIndicator(lang);
+        document.body.style.opacity = 1;
+    }, 200);
+}
+
+// 检测浏览器语言
+function detectBrowserLanguage() {
+    const browserLang = navigator.language.split('-')[0];
+    return ['zh', 'en', 'ja'].includes(browserLang) ? browserLang : 'en';
+}
+
+// 初始化语言设置
+function initLanguage() {
+    // 优先使用保存的语言设置
+    currentLang = localStorage.getItem('preferred_language') 
+                 || detectBrowserLanguage() 
+                 || 'zh';
+    
+    // 设置语言选择器的值
+    document.getElementById('language-select').value = currentLang;
+    
+    // 更新页面内容
+    updatePageContent();
 }
 
 // 根据当前语言更新页面内容
@@ -383,22 +442,6 @@ function updatePageContent() {
       }
     }
   });
-}
-
-// 初始化语言
-function initLanguage() {
-  // 从本地存储加载语言偏好
-  const savedLang = localStorage.getItem('preferred-language');
-  if (savedLang && translations[savedLang]) {
-    currentLang = savedLang;
-  }
-  
-  // 应用当前语言
-  document.documentElement.lang = currentLang === 'ja' ? 'ja' : (currentLang === 'en' ? 'en' : 'zh-CN');
-  updatePageContent();
-  
-  // 更新语言选择器显示
-  document.querySelector('#language-select').value = currentLang;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -423,4 +466,49 @@ window.i18n = {
     return currentLang;
   },
   switchLanguage: switchLanguage
-}; 
+};
+
+function showLanguageIndicator(lang) {
+    const indicator = document.getElementById('languageIndicator');
+    if (!indicator) return;
+    
+    const langNames = {
+        'zh': '中文',
+        'en': 'English',
+        'ja': '日本語'
+    };
+    
+    indicator.textContent = `Language: ${langNames[lang]}`;
+    indicator.classList.add('show');
+    
+    setTimeout(() => {
+        indicator.classList.remove('show');
+    }, 2000);
+}
+
+function validateTranslations() {
+    const languages = ['zh', 'en', 'ja'];
+    const missingTranslations = {};
+    
+    // 获取所有翻译键
+    const allKeys = new Set();
+    languages.forEach(lang => {
+        Object.keys(translations[lang]).forEach(key => allKeys.add(key));
+    });
+    
+    // 检查每种语言是否都有所有的翻译
+    languages.forEach(lang => {
+        const missing = [];
+        allKeys.forEach(key => {
+            if (!translations[lang][key]) {
+                missing.push(key);
+            }
+        });
+        if (missing.length > 0) {
+            missingTranslations[lang] = missing;
+        }
+    });
+    
+    return missingTranslations;
+}
+
