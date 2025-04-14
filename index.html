@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简历</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1 data-i18n="resume_title">个人简历</h1>
+        </div>
+        
+        <div class="language-select-container">
+            <select id="language-select">
+                <option value="zh">中文</option>
+                <option value="en">English</option>
+                <option value="ja">日本語</option>
+            </select>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="#basic-info"><i class="fas fa-user"></i> <span data-i18n="nav_basic_info">基本信息</span></a></li>
+                <li><a href="#education"><i class="fas fa-graduation-cap"></i> <span data-i18n="nav_education">教育背景</span></a></li>
+                <li><a href="#work-experience"><i class="fas fa-briefcase"></i> <span data-i18n="nav_experience">工作经历</span></a></li>
+                <li><a href="#skills"><i class="fas fa-code"></i> <span data-i18n="nav_skills">专业技能</span></a></li>
+                <li><a href="#extracurricular"><i class="fas fa-users"></i> <span data-i18n="nav_extracurricular">课外活动</span></a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> <span data-i18n="nav_contact">联系方式</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="basic-info" class="section-card">
+            <h2><i class="fas fa-user"></i> <span data-i18n="basic_info_title">基本信息</span></h2>
+            <div class="about-content">
+                <div class="profile-image">
+                    <img src="images\31c03ef477ff333fcf6b67defd1c980.jpg" alt="个人照片">
+                </div>
+                <div class="basic-info-text">
+                    <table class="info-table">
+                        <tr>
+                            <td class="info-label" data-i18n="name">姓名</td>
+                            <td class="info-value">MOROOKA ATSUHIRO</td>
+                            <td class="info-label" data-i18n="birth_date">出生日期</td>
+                            <td class="info-value">2001-06-12</td>
+                            <td class="info-label" data-i18n="gender">性别</td>
+                            <td class="info-value" data-i18n="male">男</td>
+                        </tr>
+                        <tr>
+                            <td class="info-label" data-i18n="age">年龄</td>
+                            <td class="info-value"><span id="dynamic-age">计算中...</span>岁</td>
+                            <td class="info-label" data-i18n="phone">手机号码</td>
+                            <td class="info-value">18813186019</td>
+                            <td class="info-label" data-i18n="email">邮箱</td>
+                            <td class="info-value">675294207@qq.com</td>
+                        </tr>
+                        <tr>
+                            <td class="info-label" data-i18n="nationality">国籍</td>
+                            <td class="info-value" data-i18n="japan">日本</td>
+                            <td class="info-label" data-i18n="education_level">学历</td>
+                            <td class="info-value" colspan="3">本科大四</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="section-card">
+            <h2><i class="fas fa-graduation-cap"></i> <span data-i18n="education_title">教育背景</span></h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2021-09 - 至今</div>
+                    <div class="timeline-content">
+                        <h3>北京理工大学</h3>
+                        <p>计算机科学与技术</p>
+                        <p><strong data-i18n="main_courses">主修课程：</strong></p>
+                        <p>C++面向对象、数据结构与算法、C语言程序设计、操作系统、汇编语言与接口技术、计算机系统导论、计算机网络、计算机组成原理、高级语言程序设计、工程制图</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2018-04 - 2021-03</div>
+                    <div class="timeline-content">
+                        <h3>福冈县立博多青松高等学校</h3>
+                        <p>情报科学科（商学科）</p>
+                        <p><strong data-i18n="main_courses">主修课程：</strong></p>
+                        <p>基础高中教育</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section id="work-experience" class="section-card">
+            <h2><i class="fas fa-briefcase"></i> <span data-i18n="experience_title">项目经历</span></h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2024-03 - 2024-07</div>
+                    <div class="timeline-content">
+                        <h3>图书借阅管理系统</h3>
+                        <p><strong data-i18n="project_desc">项目描述：</strong> 开发一个完整的图书借阅管理系统，具备完善支持用户在线借阅、还书、查询书籍等功能。</p>
+                        <p><strong data-i18n="project_tech">项目技术：</strong> 在团队合作开发中，我负责前端设计和后端API的实现，选择Spring Boot框架进行开发。前端使用Vuejs，数据库使用MySQL存储用户与书籍信息。项目包括用户登录、书籍查询、借阅历史查询，根据登陆的用户类型（管理员或普通用户）提供不同功能。前端采用了组件化开发的设计思路，实现了高效代码复用以及强大的数据流管理，这使得我对前端框架处理数据流有了更加深刻的理解。</p>
+                        <div class="project-link">
+                            <a href="#" data-i18n="view_project">小组成员</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2023-09 - 2024-01</div>
+                    <div class="timeline-content">
+                        <h3>基于人工智能的数字图像识别系统</h3>
+                        <p><strong data-i18n="project_desc">项目描述：</strong> 手写数字识别系统，该系统可以通过图像识别技术识别用户手写数字。</p>
+                        <p><strong data-i18n="project_tech">项目技术：</strong> 在该项目中，核心功能是使用 PyTorch 训练模型实现 CNN 模型实现图像的识别功能。系统使用 Flask、springboot、vue、MySQL 等技术构建，我主要负责前后端交互部分。用户可以使用鼠标在网页上绘制数字图形，系统能准确识别用户绘制的数字。</p>
+                        <div class="project-link">
+                            <a href="#" data-i18n="view_project">个人项目</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2024-12 - 至今</div>
+                    <div class="timeline-content">
+                        <h3>基于日文文本信息抽取与知识图谱构建系统</h3>
+                        <p><strong data-i18n="project_desc">项目描述：</strong> 基于大语言模型构建日文文本信息抽取系统，关系三元组，从而实现对日文文本内容的分析。</p>
+                        <p><strong data-i18n="project_tech">项目技术：</strong> 该项目的核心在于，通过对大量日语语料的研究，提取文本中出现的实体概念和关系，并整合成关系三元组图谱。项目中，通过使用字符级和词级别的特征处理，解决了日语文本分析的挑战。项目使用深度学习模型完成日语文本内容分析，在测试和验证集上处理效果明显。通过上下文信息关联，命名实体识别技术和关系抽取，优化了知识图谱构建过程，使得日语文本的关联关系可以从文本中提取并可视化呈现，全面、准确地重现了文本信息。</p>
+                        <div class="project-link">
+                            <a href="#" data-i18n="view_project">个人项目</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2023-08 - 2023-09</div>
+                    <div class="timeline-content">
+                        <h3>软件开发实习 - 北京理工大学计算机学院</h3>
+                        <p><strong data-i18n="project_desc">项目描述：</strong>基于Qt的远程通信软件</p>
+                        <p><strong data-i18n="project_tech">项目技术：</strong> 
+                            在开发局域网下的实时通信软件过程中，我负责了UI设计与实时文本信息传递功能的实现。确保用户可以
+                            方便地发送和接收消息。实时文本传递功能基于局域网的高效通信协议，保证了消息的快速传输和稳定性，提升了用户的通信体验。</p>
+                        <div class="project-link">
+                        <div class="project-link">
+                            <a href="#" data-i18n="view_project">实习经历</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section-card">
+            <h2><i class="fas fa-code"></i> <span data-i18n="skills_title">专业技能</span></h2>
+            <div class="skills">
+                <ul class="skill-list">
+                    <li>汉语水平考试 (hsk6级)</li>
+                    <li>springboot+vue全栈开发</li>
+                    <li>python+pytorch深度学习</li>
+                    <li>HTML+CSS+JavaScript</li>
+                    <li>MySQL</li>
+                    <li>Java</li>
+                    <li>深度学习大语言模型的理解与应用</li>
+                    <li>日语N1水平</li>
+                    <li>全商簿记鉴定2级(日本)</li>
+                    <li>情报处理鉴定2级(日本)</li>
+
+
+                </ul>
+            </div>
+        </section>
+
+        <section id="extracurricular" class="section-card">
+            <h2><i class="fas fa-users"></i> <span data-i18n="extracurricular_title">课外活动</span></h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2019-07 - 至今</div>
+                    <div class="timeline-content">
+                        <h3>合气道部</h3>
+                        <p><strong>活动内容：</strong></p>
+                        <ul>
+                            <li>积极参与合气道训练，掌握基本技法</li>
+                            <li>参与社团演武和交流活动，出席了进几年的合气道全国演武大会</li>
+                            <li>在福冈天神道场进行合气道训练</li>
+                            <li>培养了团队协作精神和自我修养能力</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2023-09 - 至今</div>
+                    <div class="timeline-content">
+                        <h3>登山社团</h3>
+                        <p><strong>活动内容：</strong></p>
+                        <ul>
+                            <li>定期参与登山活动，提高体能和意志力</li>
+                            <li>学习户外生存技能和安全知识</li>
+                            <li>参与社团组织的各类户外探险活动</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2023-09 - 至今</div>
+                    <div class="timeline-content">
+                        <h3>日语文化社团</h3>
+                        <p><strong>活动内容：</strong></p>
+                        <ul>
+                            <li>组织日语社团活动，促进中日文化交流</li>
+                            <li>参与每年学校举办的日本文化节活动的策划和实施</li>
+                            <li>协助举办日语演讲比赛和文化讲座</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2023-03 - 至今</div>
+                    <div class="timeline-content">
+                        <h3>学校组织的志愿者活动</h3>
+                        <p><strong>活动内容：</strong></p>
+                        <ul>
+                            <li>留学生迎新志愿者活动</li>
+                            <li>国际文化节志愿者活动</li>
+                            <li>运动会志愿者活动</li>
+                            <li>中日和平友好条约缔结大会与交流会</li>
+                            <li>CATTI杯大赛志愿者</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section-card">
+            <h2><i class="fas fa-envelope"></i> <span data-i18n="contact_title">联系方式</span></h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:6752942@qq.com">675294207@qq.com</a></p>
+                    <p><i class="fas fa-phone"></i> <span data-i18n="phone">手机</span>: +86-18813186019</p>
+                    <p><i class="fas fa-phone"></i> <span data-i18n="phone">手机</span>: +81-080-9053-0612</p>
+                    <p><i class="fas fa-phone"></i> <span data-i18n="weixin">微信</span>: xcb9310</p>
+                    <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="address">地址</span>: 日本 福冈县春日市昇町7丁目90番地</p>
+                    <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="address">地址</span>: 中国 辽宁省沈阳市大东区大北关街75号A3-2-6-1</p>
+                </div>
+                <form class="contact-form">
+                    <p class="form-note" data-i18n="form_note">填写以下表单，我会尽快回复您</p>
+                    <input type="text" name="name" placeholder="您的姓名" data-i18n="your_name" required>
+                    <input type="email" name="email" placeholder="您的邮箱" data-i18n="your_email" required>
+                    <textarea name="message" placeholder="您的留言" data-i18n="your_message" required></textarea>
+                    <button type="submit" class="button" data-i18n="send_message">发送消息</button>
+                    <p class="form-help" data-i18n="form_help">点击发送后将打开您的邮件客户端，请确认发送邮件</p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p><span data-i18n="copyright">版权所有</span> &copy; 2025</p>
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/age-calculator.js"></script>
+    <script src="js/language.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html> 
