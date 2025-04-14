@@ -244,13 +244,13 @@
                     <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="address">地址</span>: <span data-i18n="address_jp">日本 福冈县春日市昇町7丁目90番地</span></p>
                     <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="address">地址</span>: <span data-i18n="address_cn">中国 辽宁省沈阳市大东区大北关街75号A3-2-6-1</span></p>
                 </div>
-                <form class="contact-form">
+                <form class="contact-form" id="contactForm">
                     <p class="form-note" data-i18n="form_note">填写以下表单，我会尽快回复您</p>
-                    <input type="text" name="name" data-i18n="your_name" placeholder="您的姓名" required>
-                    <input type="email" name="email" data-i18n="your_email" placeholder="您的邮箱" required>
-                    <textarea name="message" data-i18n="your_message" placeholder="您的留言" required></textarea>
+                    <input type="text" name="name" id="contactName" data-i18n="your_name" placeholder="您的姓名" required>
+                    <input type="email" name="email" id="contactEmail" data-i18n="your_email" placeholder="您的邮箱" required>
+                    <textarea name="message" id="contactMessage" data-i18n="your_message" placeholder="您的留言" required></textarea>
                     <button type="submit" class="button" data-i18n="send_message">发送消息</button>
-                    <p class="form-help" data-i18n="form_help">点击发送后将打开您的邮件客户端，请确认发送邮件</p>
+                    <div id="formStatus" class="form-status"></div>
                 </form>
             </div>
         </section>
@@ -269,6 +269,18 @@
 
     <script src="js/age-calculator.js"></script>
     <script src="js/language.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            // 请将 "YOUR_PUBLIC_KEY" 替换为您从 EmailJS 账户页面获取的 Public Key
+            // 获取方法：
+            // 1. 登录 https://dashboard.emailjs.com/
+            // 2. 点击左侧菜单 "Account"
+            // 3. 在 "API Keys" 部分找到 "Public Key"
+            emailjs.init("ZFPIVN7njGGc4678R");
+        })();
+    </script>
+    <script src="js/contact-form.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html> 

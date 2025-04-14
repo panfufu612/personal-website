@@ -543,4 +543,30 @@ footer {
 
 .language-indicator.show {
     opacity: 1;
+}
+
+.form-status {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    text-align: center;
+    display: none;
+}
+
+.form-status.sending {
+    display: block;
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.form-status.success {
+    display: block;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.form-status.error {
+    display: block;
+    background-color: #ffebee;
+    color: #c62828;
 } 
