@@ -1,0 +1,331 @@
+/* 暗色模式样式 */
+:root {
+    /* 默认亮色主题变量 */
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --light-bg: #f5f6fa;
+    --card-bg: white;
+    --border-color: #eaeaea;
+    --timeline-color: #ddd;
+    --timeline-dot: var(--secondary-color);
+    --skill-tag-bg: var(--light-bg);
+    --skill-tag-text: var(--primary-color);
+    --header-bg: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    --footer-bg: var(--primary-color);
+    --form-bg: var(--light-bg);
+    --form-text: var(--text-color);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --hover-shadow: rgba(0, 0, 0, 0.15);
+    --heading-color: var(--primary-color);
+}
+
+/* 暗色主题变量 */
+[data-theme="dark"] {
+    --primary-color: #1a1a2e;
+    --secondary-color: #4361ee;
+    --accent-color: #f72585;
+    --text-color: #e0e0e0;
+    --light-bg: #121212;
+    --card-bg: #1e1e30;
+    --border-color: #2a2a40;
+    --timeline-color: #333345;
+    --timeline-dot: var(--accent-color);
+    --skill-tag-bg: #2a2a40;
+    --skill-tag-text: #e0e0e0;
+    --header-bg: linear-gradient(135deg, #1a1a2e, #16213e);
+    --footer-bg: #0f0f1a;
+    --form-bg: #242440;
+    --form-text: #e0e0e0;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --hover-shadow: rgba(0, 0, 0, 0.4);
+    --heading-color: #7ed6df; /* 浅青色，更适合暗色主题的标题 */
+}
+
+/* 应用主题变量到元素 */
+body {
+    background-color: var(--light-bg);
+    color: var(--text-color);
+}
+
+header {
+    background: var(--header-bg);
+}
+
+.section-card {
+    background: var(--card-bg);
+    box-shadow: 0 2px 15px var(--shadow-color);
+}
+
+.section-card:hover {
+    box-shadow: 0 10px 25px var(--hover-shadow);
+}
+
+.section-card h2 {
+    color: var(--heading-color);
+    border-bottom: 2px solid var(--border-color);
+    font-weight: bold;
+}
+
+.timeline::before {
+    background: var(--timeline-color);
+}
+
+.timeline-item::before {
+    background: var(--timeline-dot);
+}
+
+.timeline-content {
+    background: var(--light-bg);
+}
+
+.timeline-date {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.timeline-content h3 {
+    color: var(--heading-color);
+    font-weight: bold;
+}
+
+.skill-list li {
+    background: var(--skill-tag-bg);
+    color: var(--skill-tag-text);
+}
+
+[data-theme="dark"] .skill-list li {
+    background-color: #2d3436;
+    color: #dfe6e9;
+}
+
+.skill-progress {
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+}
+
+footer {
+    background: var(--footer-bg);
+}
+
+[data-theme="dark"] footer {
+    color: #dfe6e9;
+}
+
+.hover-card {
+    background-color: var(--card-bg);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.hover-card-title {
+    color: var(--heading-color);
+    font-weight: bold;
+}
+
+.hover-card-text {
+    color: var(--text-color);
+}
+
+.hover-card-tag {
+    background-color: var(--skill-tag-bg);
+    color: var(--skill-tag-text);
+}
+
+[data-theme="dark"] .hover-card-tag {
+    background-color: #2d3436;
+    color: #dfe6e9;
+}
+
+.hover-card:hover {
+    box-shadow: 0 15px 30px var(--hover-shadow);
+}
+
+.contact-form input,
+.contact-form textarea {
+    background-color: var(--form-bg);
+    color: var(--form-text);
+    border: 1px solid var(--border-color);
+}
+
+/* 暗色模式切换开关 */
+.mode-switch-wrapper {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: auto;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--card-bg);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: all 0.3s ease;
+    max-width: 120px;
+}
+
+.mode-switch-wrapper:hover {
+    box-shadow: 0 10px 25px var(--hover-shadow);
+}
+
+.mode-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-bottom: 10px;
+}
+
+.mode-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.mode-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.mode-slider:before {
+    position: absolute;
+    content: "☀️";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .mode-slider {
+    background-color: var(--secondary-color);
+}
+
+input:focus + .mode-slider {
+    box-shadow: 0 0 1px var(--secondary-color);
+}
+
+input:checked + .mode-slider:before {
+    transform: translateX(26px);
+    content: "🌙";
+}
+
+.mode-status {
+    font-size: 0.8rem;
+    color: var(--text-color);
+    margin-top: 5px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 768px) {
+    .mode-switch-wrapper {
+        bottom: 20px;
+        left: 20px;
+        right: auto;
+        padding: 8px;
+        transform: scale(0.9);
+        width: auto;
+        min-width: 80px;
+    }
+    
+    .mode-switch {
+        width: 50px;
+        height: 24px;
+        margin-bottom: 5px;
+    }
+    
+    .mode-slider:before {
+        height: 20px;
+        width: 20px;
+        font-size: 12px;
+    }
+    
+    input:checked + .mode-slider:before {
+        transform: translateX(26px);
+    }
+    
+    .mode-status {
+        font-size: 0.75rem;
+    }
+
+    /* 确保在暗色模式下开关文字可见 */
+    [data-theme="dark"] .mode-status {
+        text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+    }
+}
+
+/* 暗色模式文本增强 */
+[data-theme="dark"] .header-content h1,
+[data-theme="dark"] .subtitle {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .info-label {
+    color: #74b9ff;
+    font-weight: bold;
+}
+
+[data-theme="dark"] .info-value {
+    color: #dfe6e9;
+}
+
+[data-theme="dark"] a {
+    color: #74b9ff;
+}
+
+[data-theme="dark"] a:hover {
+    color: #0984e3;
+}
+
+[data-theme="dark"] .project-link a {
+    background-color: #0984e3;
+    color: white;
+    font-weight: bold;
+}
+
+[data-theme="dark"] .project-link a:hover {
+    background-color: #74b9ff;
+}
+
+[data-theme="dark"] nav ul li a {
+    color: #dfe6e9;
+}
+
+[data-theme="dark"] nav ul li a:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+[data-theme="dark"] strong {
+    color: #74b9ff;
+}
+
+[data-theme="dark"] .timeline-content p {
+    color: #b2bec3;
+}
+
+/* 暗色模式切换动画 */
+body,
+.section-card,
+.timeline-content,
+.hover-card,
+.mode-switch-wrapper,
+.contact-form input,
+.contact-form textarea {
+    transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+} 

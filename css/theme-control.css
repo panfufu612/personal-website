@@ -1,0 +1,185 @@
+/* 主题控制面板样式 */
+
+:root {
+  --panel-bg: rgba(255, 255, 255, 0.85);
+  --panel-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --switch-border: #ddd;
+  --label-color: #333;
+  --title-color: #555;
+  --status-color: #777;
+  --slider-bg: #fff;
+  --slider-active: #4CAF50;
+  --dark-slider-active: #9c27b0;
+}
+
+[data-theme="dark"] {
+  --panel-bg: rgba(40, 44, 52, 0.85);
+  --panel-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  --switch-border: #444;
+  --label-color: #eee;
+  --title-color: #ccc;
+  --status-color: #aaa;
+  --slider-bg: #555;
+}
+
+.theme-control-panel {
+  position: fixed;
+  bottom: 80px;
+  right: -300px;
+  width: 280px;
+  background-color: var(--card-bg-color);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 15px;
+  z-index: 9999;
+  transition: right 0.3s ease;
+  opacity: 0.95;
+  border: 1px solid var(--border-color);
+}
+
+.theme-control-panel.show {
+  right: 20px;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.panel-header h3 {
+  margin: 0;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.panel-body {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.switch-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.theme-control-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 9998;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.theme-control-btn:hover {
+  transform: rotate(45deg);
+  background-color: var(--accent-color);
+}
+
+/* 开关样式 */
+.theme-switch, .dynamic-bg-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.theme-switch input, .dynamic-bg-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--primary-color);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--primary-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* 媒体查询适配移动设备 */
+@media screen and (max-width: 768px) {
+  .theme-control-panel {
+    width: 85%;
+    max-width: 300px;
+    left: 50%;
+    bottom: -300px;
+    right: auto;
+    transform: translateX(-50%);
+    transition: bottom 0.3s ease;
+  }
+  
+  .theme-control-panel.show {
+    bottom: 80px;
+    right: auto;
+  }
+  
+  .theme-control-btn {
+    bottom: 20px;
+    right: 20px;
+  }
+} 

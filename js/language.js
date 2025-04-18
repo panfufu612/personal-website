@@ -129,7 +129,18 @@ const translations = {
     error_message: '发送消息时出错，请稍后再试。',
     email_ready: '邮件客户端已打开，请发送邮件完成联系。',
     connection_error: '无法连接到服务器。请直接发送邮件与我联系。',
-    confirm_email: '是否要使用邮件客户端发送消息？'
+    confirm_email: '是否要使用邮件客户端发送消息？',
+    
+    // 项目展示
+    projects_showcase: '项目展示',
+    
+    // 动态背景
+    dynamic_bg_on: '动态背景: 开启',
+    dynamic_bg_off: '动态背景: 关闭',
+    
+    // 暗色模式
+    dark_mode: '暗色模式',
+    light_mode: '亮色模式',
   },
   
   en: {
@@ -255,7 +266,18 @@ const translations = {
     error_message: 'Error sending message. Please try again later.',
     email_ready: 'Email client has been opened.',
     connection_error: 'Unable to connect to server. Please contact me directly via email.',
-    confirm_email: 'Would you like to send an email?'
+    confirm_email: 'Would you like to send an email?',
+    
+    // 项目展示
+    projects_showcase: 'Project Showcase',
+    
+    // 动态背景
+    dynamic_bg_on: 'Dynamic BG: ON',
+    dynamic_bg_off: 'Dynamic BG: OFF',
+    
+    // 暗色模式
+    dark_mode: 'Dark Mode',
+    light_mode: 'Light Mode',
   },
   
   ja: {
@@ -387,7 +409,18 @@ const translations = {
     error_message: '送信中にエラーが発生しました。後ほど再度お試しください。',
     email_ready: 'メールクライアントを開きました。',
     connection_error: 'サーバーに接続できません。直接メールでご連絡ください。',
-    confirm_email: 'メールを送信しますか？'
+    confirm_email: 'メールを送信しますか？',
+    
+    // 项目展示
+    projects_showcase: 'プロジェクト展示',
+    
+    // 动态背景
+    dynamic_bg_on: '動的背景: オン',
+    dynamic_bg_off: '動的背景: オフ',
+    
+    // 暗色模式
+    dark_mode: 'ダークモード',
+    light_mode: 'ライトモード',
   }
 };
 

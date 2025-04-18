@@ -1,0 +1,118 @@
+/* 悬停效果卡片 */
+.hover-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hover-card-image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.hover-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.hover-card:hover .hover-card-image img {
+    transform: scale(1.1);
+}
+
+.hover-card-content {
+    padding: 20px;
+}
+
+.hover-card-title {
+    margin: 0 0 10px 0;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.hover-card-subtitle {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.hover-card-text {
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.hover-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.hover-card-tag {
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    background-color: var(--light-bg);
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.hover-card:hover .hover-card-tag {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.hover-card-link {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.hover-card-link:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 悬停效果：上浮阴影 */
+.hover-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* 悬停效果：渐变边框 */
+.hover-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.hover-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* 卡片布局 */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+} 

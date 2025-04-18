@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日语知识图谱系统预览</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+        }
+        .preview-container {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            background-color: #1e2235;
+            position: relative;
+        }
+        .graph-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #1e2235;
+        }
+        .node {
+            position: absolute;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            font-family: sans-serif;
+        }
+        .node.professor {
+            background-color: #4285f4;
+            width: 80px;
+            height: 80px;
+        }
+        .node.field {
+            background-color: #34a853;
+            width: 70px;
+            height: 70px;
+        }
+        .node.institution {
+            background-color: #fbbc05;
+            width: 80px;
+            height: 80px;
+        }
+        .node.paper {
+            background-color: #ea4335;
+            width: 60px;
+            height: 60px;
+        }
+        .node.book {
+            background-color: #9c27b0;
+            width: 65px;
+            height: 65px;
+        }
+        .edge {
+            position: absolute;
+            height: 2px;
+            background-color: rgba(255,255,255,0.2);
+            transform-origin: left center;
+            z-index: -1;
+        }
+        .controls {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(0,0,0,0.6);
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            font-family: sans-serif;
+            font-size: 14px;
+        }
+        .legend {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(0,0,0,0.6);
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            font-family: sans-serif;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+        .legend-color {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-container">
+        <div class="graph-bg"></div>
+        
+        <!-- 边/关系 -->
+        <div class="edge" style="width: 150px; left: 270px; top: 200px; transform: rotate(30deg);"></div>
+        <div class="edge" style="width: 180px; left: 270px; top: 220px; transform: rotate(-20deg);"></div>
+        <div class="edge" style="width: 170px; left: 250px; top: 210px; transform: rotate(150deg);"></div>
+        <div class="edge" style="width: 200px; left: 250px; top: 190px; transform: rotate(190deg);"></div>
+        <div class="edge" style="width: 160px; left: 410px; top: 210px; transform: rotate(10deg);"></div>
+        <div class="edge" style="width: 150px; left: 190px; top: 170px; transform: rotate(120deg);"></div>
+        <div class="edge" style="width: 220px; left: 430px; top: 230px; transform: rotate(130deg);"></div>
+        <div class="edge" style="width: 180px; left: 180px; top: 240px; transform: rotate(340deg);"></div>
+        <div class="edge" style="width: 190px; left: 500px; top: 180px; transform: rotate(250deg);"></div>
+        <div class="edge" style="width: 170px; left: 420px; top: 150px; transform: rotate(290deg);"></div>
+        
+        <!-- 节点 -->
+        <div class="node professor" style="left: 230px; top: 180px;">教授</div>
+        <div class="node field" style="left: 400px; top: 120px;">研究領域</div>
+        <div class="node institution" style="left: 140px; top: 300px;">機構</div>
+        <div class="node paper" style="left: 500px; top: 240px;">論文</div>
+        <div class="node book" style="left: 390px; top: 320px;">著作</div>
+        
+        <!-- 控制面板 -->
+        <div class="controls">
+            <div>節点搜索 ______</div>
+            <div style="margin-top: 10px;">関係類型：全部関係 ▼</div>
+            <div style="margin-top: 10px;">表示節点数量：▢</div>
+            <div style="margin-top: 10px;">节点: 5 关系: 10</div>
+            <div style="margin-top: 10px; text-align: center; padding: 5px; background-color: #1a73e8; border-radius: 3px;">更新图谱</div>
+        </div>
+        
+        <!-- 图例 -->
+        <div class="legend">
+            <div class="legend-item"><div class="legend-color" style="background-color: #4285f4;"></div>教授</div>
+            <div class="legend-item"><div class="legend-color" style="background-color: #34a853;"></div>研究領域</div>
+            <div class="legend-item"><div class="legend-color" style="background-color: #fbbc05;"></div>機構</div>
+            <div class="legend-item"><div class="legend-color" style="background-color: #ea4335;"></div>論文</div>
+            <div class="legend-item"><div class="legend-color" style="background-color: #9c27b0;"></div>著作</div>
+        </div>
+    </div>
+</body>
+</html> 

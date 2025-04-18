@@ -3,10 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title data-i18n="resume_title">个人简历</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/language-switcher.css">
+    <link rel="stylesheet" href="css/hover-card.css">
+    <link rel="stylesheet" href="css/theme-switch.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/theme-control.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
@@ -128,7 +136,7 @@
                         <p><strong data-i18n="project_desc">项目描述：</strong> <span data-i18n="project3_desc">基于大语言模型构建日语文本信息抽取系统，关系三元组，从而实现对日语文本内容的分析。</span></p>
                         <p><strong data-i18n="project_tech">项目技术：</strong> <span data-i18n="project3_tech">该项目的核心在于，通过对大量日语语料的研究，提取文本中出现的实体概念和关系，并整合成关系三元组图谱。项目中，通过使用字符级和词级别的特征处理，解决了日语文本分析的挑战。</span></p>
                         <div class="project-link">
-                            <a href="#" data-i18n="view_project">查看项目</a>
+                            <a href="https://kgsys-new.vercel.app/" data-i18n="view_project">查看项目</a>
                         </div>
                     </div>
                 </div>
@@ -142,6 +150,68 @@
                         <div class="project-link">
                             <a href="#" data-i18n="view_project">查看项目</a>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="project-showcase" class="section-card">
+            <h2><i class="fas fa-project-diagram"></i> <span data-i18n="projects_showcase">项目展示</span></h2>
+            <div class="card-grid">
+                <!-- 项目卡片 1 -->
+                <div class="hover-card">
+                    <div class="hover-card-image">
+                        <img src="images/project1.jpg" alt="图书借阅管理系统" onerror="this.src='https://via.placeholder.com/400x200?text=图书借阅管理系统'">
+                    </div>
+                    <div class="hover-card-content">
+                        <h3 class="hover-card-title" data-i18n="project1_title">图书借阅管理系统</h3>
+                        <div class="hover-card-subtitle">Spring Boot + Vue + MySQL</div>
+                        <p class="hover-card-text" data-i18n="project1_desc">开发一个完整的图书借阅管理系统，具备完善支持用户在线借阅、还书、查询书籍等功能。</p>
+                        <div class="hover-card-tags">
+                            <span class="hover-card-tag">Spring Boot</span>
+                            <span class="hover-card-tag">Vue.js</span>
+                            <span class="hover-card-tag">MySQL</span>
+                            <span class="hover-card-tag">Java</span>
+                        </div>
+                        <a href="#" class="hover-card-link" data-i18n="view_project">查看项目</a>
+                    </div>
+                </div>
+                
+                <!-- 项目卡片 2 -->
+                <div class="hover-card">
+                    <div class="hover-card-image">
+                        <img src="images/project2.jpg" alt="AI图像识别系统" onerror="this.src='https://via.placeholder.com/400x200?text=AI图像识别系统'">
+                    </div>
+                    <div class="hover-card-content">
+                        <h3 class="hover-card-title" data-i18n="project2_title">AI图像识别系统</h3>
+                        <div class="hover-card-subtitle">PyTorch + Flask + Vue</div>
+                        <p class="hover-card-text" data-i18n="project2_desc">手写数字识别系统，该系统可以通过图像识别技术识别用户手写数字。</p>
+                        <div class="hover-card-tags">
+                            <span class="hover-card-tag">PyTorch</span>
+                            <span class="hover-card-tag">Flask</span>
+                            <span class="hover-card-tag">Vue.js</span>
+                            <span class="hover-card-tag">CNN</span>
+                        </div>
+                        <a href="#" class="hover-card-link" data-i18n="view_project">查看项目</a>
+                    </div>
+                </div>
+                
+                <!-- 项目卡片 3 -->
+                <div class="hover-card">
+                    <div class="hover-card-image">
+                        <iframe src="images/knowledge-graph-preview.html" frameborder="0" width="100%" height="200" style="overflow: hidden;" title="日语知识图谱可视化系统"></iframe>
+                    </div>
+                    <div class="hover-card-content">
+                        <h3 class="hover-card-title" data-i18n="project3_title">日语文本信息抽取与知识图谱构建系统</h3>
+                        <div class="hover-card-subtitle">Python + NLP + 知识图谱</div>
+                        <p class="hover-card-text" data-i18n="project3_desc">基于大语言模型构建日语文本信息抽取系统，关系三元组，从而实现对日语文本内容的分析。</p>
+                        <div class="hover-card-tags">
+                            <span class="hover-card-tag">NLP</span>
+                            <span class="hover-card-tag">知识图谱</span>
+                            <span class="hover-card-tag">Python</span>
+                            <span class="hover-card-tag">深度学习</span>
+                        </div>
+                        <a href="https://kgsys-new.vercel.app/" class="hover-card-link" data-i18n="view_project">查看项目</a>
                     </div>
                 </div>
             </div>
@@ -267,6 +337,15 @@
         </div>
     </footer>
 
+    <!-- 主题开关 -->
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="dynamic-bg-checkbox">
+            <input type="checkbox" id="dynamic-bg-checkbox" checked>
+            <span class="slider"></span>
+        </label>
+        <span class="theme-status" data-i18n="dynamic_bg_on">动态背景: 开启</span>
+    </div>
+
     <script src="js/age-calculator.js"></script>
     <script src="js/language.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -280,7 +359,12 @@
             emailjs.init("ZFPIVN7njGGc4678R");
         })();
     </script>
+    <script src="js/particles.js"></script>
+    <script src="js/dynamic-background.js"></script>
+    <script src="js/theme-control.js"></script>
     <script src="js/contact-form.js"></script>
+    <script src="js/animations.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/switch-positions.js"></script>
 </body>
 </html> 
