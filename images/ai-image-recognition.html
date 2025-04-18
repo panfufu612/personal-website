@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI图像识别系统</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+        .preview-container {
+            width: 100%;
+            max-width: 600px;
+            height: 200px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            background: linear-gradient(135deg, #6d4799, #492980);
+            position: relative;
+            color: white;
+            font-family: 'Arial', sans-serif;
+        }
+        .grid-container {
+            position: absolute;
+            left: 30px;
+            top: 40px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            grid-gap: 5px;
+            width: 120px;
+            height: 120px;
+        }
+        .digit {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 18px;
+            background-color: rgba(255,255,255,0.2);
+            border-radius: 4px;
+        }
+        .arrow {
+            position: absolute;
+            left: 170px;
+            top: 85px;
+            font-size: 36px;
+        }
+        .ai-brain {
+            position: absolute;
+            left: 220px;
+            top: 60px;
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+        }
+        .arrow-right {
+            position: absolute;
+            left: 320px;
+            top: 85px;
+            font-size: 36px;
+        }
+        .result {
+            position: absolute;
+            right: 60px;
+            top: 65px;
+            width: 70px;
+            height: 70px;
+            background-color: rgba(255,255,255,0.3);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            font-weight: bold;
+        }
+        .title {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-container">
+        <div class="grid-container">
+            <div class="digit">1</div>
+            <div class="digit">4</div>
+            <div class="digit">7</div>
+            <div class="digit">3</div>
+            <div class="digit">5</div>
+            <div class="digit">9</div>
+            <div class="digit">2</div>
+            <div class="digit">8</div>
+            <div class="digit">6</div>
+            <div class="digit">0</div>
+            <div class="digit">3</div>
+            <div class="digit">8</div>
+            <div class="digit">4</div>
+            <div class="digit">9</div>
+            <div class="digit">7</div>
+            <div class="digit">1</div>
+        </div>
+        <div class="arrow">→</div>
+        <div class="ai-brain">🧠</div>
+        <div class="arrow-right">→</div>
+        <div class="result">7</div>
+        <div class="title">AI图像识别系统</div>
+    </div>
+</body>
+</html> 

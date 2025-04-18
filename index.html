@@ -16,13 +16,13 @@
     <link rel="stylesheet" href="css/theme-control.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
-<body>
-    <header>
-        <div class="header-content">
-            <h1 data-i18n="resume_title">个人简历</h1>
-        </div>
-        
-        <div class="language-select-container">
+<body class="mobile-dark-theme">
+    <div class="mobile-section-indicator">
+        <span>当前位置：<span id="current-section-name">基本信息</span></span>
+    </div>
+    
+    <header class="header-mobile-simple">
+        <div class="language-select-container mobile-fixed">
             <select id="language-select">
                 <option value="zh">中文</option>
                 <option value="en">English</option>
@@ -30,7 +30,11 @@
             </select>
         </div>
         
-        <nav>
+        <div class="resume-bg-dark">
+            <h1 class="resume-title-center">个人简历</h1>
+        </div>
+        
+        <nav id="main-nav">
             <ul>
                 <li><a href="#basic-info"><i class="fas fa-user"></i> <span data-i18n="nav_basic_info">基本信息</span></a></li>
                 <li><a href="#education"><i class="fas fa-graduation-cap"></i> <span data-i18n="nav_education">教育背景</span></a></li>
@@ -40,6 +44,10 @@
                 <li><a href="#contact"><i class="fas fa-envelope"></i> <span data-i18n="nav_contact">联系方式</span></a></li>
             </ul>
         </nav>
+        
+        <button id="mobile-menu-toggle" class="mobile-menu-toggle">
+            <span class="menu-icon"></span>
+        </button>
     </header>
 
     <main>
@@ -54,24 +62,26 @@
                         <tr>
                             <td class="info-label" data-i18n="name">姓名</td>
                             <td class="info-value">MOROOKA ATSUHIRO</td>
-                            <td class="info-label" data-i18n="birth_date">出生日期</td>
-                            <td class="info-value">2001-06-12</td>
-                            <td class="info-label" data-i18n="gender">性别</td>
-                            <td class="info-value" data-i18n="male">男</td>
-                        </tr>
-                        <tr>
-                            <td class="info-label" data-i18n="age">年龄</td>
-                            <td class="info-value"><span id="dynamic-age">计算中...</span><span data-i18n="age_unit">岁</span></td>
                             <td class="info-label" data-i18n="phone">手机号码</td>
                             <td class="info-value">18813186019</td>
+                        </tr>
+                        <tr>
+                            <td class="info-label" data-i18n="birth_date">出生日期</td>
+                            <td class="info-value">2001-06-12</td>
                             <td class="info-label" data-i18n="email">邮箱</td>
                             <td class="info-value">675294207@qq.com</td>
                         </tr>
                         <tr>
+                            <td class="info-label" data-i18n="gender">性别</td>
+                            <td class="info-value" data-i18n="male">男</td>
                             <td class="info-label" data-i18n="nationality">国籍</td>
                             <td class="info-value" data-i18n="japan">日本</td>
+                        </tr>
+                        <tr>
+                            <td class="info-label" data-i18n="age">年龄</td>
+                            <td class="info-value"><span id="dynamic-age">计算中...</span><span data-i18n="age_unit">岁</span></td>
                             <td class="info-label" data-i18n="education_level">学历</td>
-                            <td class="info-value" colspan="3" data-i18n="education_status">本科大四</td>
+                            <td class="info-value" data-i18n="education_status">本科大四</td>
                         </tr>
                     </table>
                 </div>
@@ -161,7 +171,7 @@
                 <!-- 项目卡片 1 -->
                 <div class="hover-card">
                     <div class="hover-card-image">
-                        <img src="images/project1.jpg" alt="图书借阅管理系统" onerror="this.src='https://via.placeholder.com/400x200?text=图书借阅管理系统'">
+                        <iframe src="images/library-system.html" frameborder="0" width="100%" height="200" style="overflow: hidden;" title="图书借阅管理系统"></iframe>
                     </div>
                     <div class="hover-card-content">
                         <h3 class="hover-card-title" data-i18n="project1_title">图书借阅管理系统</h3>
@@ -180,7 +190,7 @@
                 <!-- 项目卡片 2 -->
                 <div class="hover-card">
                     <div class="hover-card-image">
-                        <img src="images/project2.jpg" alt="AI图像识别系统" onerror="this.src='https://via.placeholder.com/400x200?text=AI图像识别系统'">
+                        <iframe src="images/ai-image-recognition.html" frameborder="0" width="100%" height="200" style="overflow: hidden;" title="AI图像识别系统"></iframe>
                     </div>
                     <div class="hover-card-content">
                         <h3 class="hover-card-title" data-i18n="project2_title">AI图像识别系统</h3>

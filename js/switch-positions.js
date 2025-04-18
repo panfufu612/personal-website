@@ -1,90 +1,81 @@
-// 控制主题开关和动态背景开关的位置
+/**
+ * 开关位置管理脚本 - 调整主题开关和暗色模式开关的位置
+ */
 document.addEventListener('DOMContentLoaded', function() {
+    // 获取两个开关元素
+    const themeSwitch = document.querySelector('.theme-switch-wrapper');
+    const darkModeSwitch = document.querySelector('.dark-mode-switch-wrapper');
+    
+    // 确保两个开关元素存在
+    if (!themeSwitch || !darkModeSwitch) return;
+    
+    // 调整开关位置函数
+    function adjustSwitchPositions() {
+        if (window.innerWidth <= 768) {
+            // 移动端：动态背景开关在右下角，暗色模式开关在左下角
+            themeSwitch.style.position = 'fixed';
+            themeSwitch.style.bottom = '20px';
+            themeSwitch.style.right = '20px';
+            themeSwitch.style.left = 'auto';
+            themeSwitch.style.zIndex = '90';
+            
+            darkModeSwitch.style.position = 'fixed';
+            darkModeSwitch.style.bottom = '20px';
+            darkModeSwitch.style.left = '20px';
+            darkModeSwitch.style.right = 'auto';
+            darkModeSwitch.style.zIndex = '90';
+        } else {
+            // 桌面端：位置还原为原始设置
+            themeSwitch.style.position = '';
+            themeSwitch.style.bottom = '';
+            themeSwitch.style.right = '';
+            themeSwitch.style.left = '';
+            themeSwitch.style.zIndex = '';
+            
+            darkModeSwitch.style.position = '';
+            darkModeSwitch.style.bottom = '';
+            darkModeSwitch.style.left = '';
+            darkModeSwitch.style.right = '';
+            darkModeSwitch.style.zIndex = '';
+        }
+    }
+    
+    // 检测滚动以避免与页脚重叠
+    function adjustPositionsForFooter() {
+        if (window.innerWidth <= 768) {
+            const footer = document.querySelector('footer');
+            if (!footer) return;
+            
+            const footerRect = footer.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            // 如果页脚出现在视口中，调整开关位置
+            if (footerRect.top < windowHeight) {
+                const distanceFromBottom = windowHeight - footerRect.top;
+                const newBottomValue = (distanceFromBottom + 10) + 'px';
+                
+                themeSwitch.style.bottom = newBottomValue;
+                darkModeSwitch.style.bottom = newBottomValue;
+            } else {
+                // 恢复默认位置
+                themeSwitch.style.bottom = '20px';
+                darkModeSwitch.style.bottom = '20px';
+            }
+        }
+    }
+    
     // 初始调整开关位置
     adjustSwitchPositions();
     
-    // 监听窗口大小变化
-    window.addEventListener('resize', adjustSwitchPositions);
+    // 窗口大小改变时重新调整
+    window.addEventListener('resize', function() {
+        adjustSwitchPositions();
+        // 如果大小变化，也需要检查页脚位置
+        adjustPositionsForFooter();
+    });
     
-    // 监听滚动事件，确保开关不会与页脚重叠
+    // 滚动时调整位置以避免与页脚重叠
     window.addEventListener('scroll', function() {
-        const footerHeight = document.querySelector('footer')?.offsetHeight || 0;
-        const windowHeight = window.innerHeight;
-        const scrollY = window.scrollY;
-        const bodyHeight = document.body.offsetHeight;
-        
-        // 计算距离底部的距离
-        const distanceToBottom = bodyHeight - scrollY - windowHeight;
-        
-        // 调整开关位置以避免与页脚重叠
-        const darkModeSwitch = document.querySelector('.mode-switch').closest('.switch-container');
-        const dynamicBgSwitch = document.querySelector('.bg-switch').closest('.switch-container');
-        
-        if (distanceToBottom < footerHeight + 10) {
-            const newBottom = (footerHeight - distanceToBottom + 20) + 'px';
-            if (darkModeSwitch) darkModeSwitch.style.bottom = newBottom;
-            if (dynamicBgSwitch) dynamicBgSwitch.style.bottom = newBottom;
-        } else {
-            if (darkModeSwitch) darkModeSwitch.style.bottom = '20px';
-            if (dynamicBgSwitch) dynamicBgSwitch.style.bottom = '20px';
-        }
+        adjustPositionsForFooter();
     });
 });
-
-/**
- * 调整开关位置，确保不重叠
- */
-function adjustSwitchPositions() {
-    // 获取开关元素
-    const darkModeSwitch = document.querySelector('.mode-switch').closest('.switch-container');
-    const dynamicBgSwitch = document.querySelector('.bg-switch').closest('.switch-container');
-    
-    if (!darkModeSwitch || !dynamicBgSwitch) return;
-    
-    // 移除开关的原始位置样式
-    darkModeSwitch.style.position = 'fixed';
-    dynamicBgSwitch.style.position = 'fixed';
-    
-    // 在移动设备上的布局
-    if (window.innerWidth <= 768) {
-        // 暗色模式开关：左下角
-        darkModeSwitch.style.left = '20px';
-        darkModeSwitch.style.right = 'auto';
-        darkModeSwitch.style.bottom = '20px';
-        darkModeSwitch.style.zIndex = '1000';
-        
-        // 动态背景开关：右下角
-        dynamicBgSwitch.style.right = '20px';
-        dynamicBgSwitch.style.left = 'auto';
-        dynamicBgSwitch.style.bottom = '20px';
-        dynamicBgSwitch.style.zIndex = '1000';
-        
-        // 在极小的屏幕上，减小开关之间的间距
-        if (window.innerWidth < 400) {
-            darkModeSwitch.style.left = '10px';
-            dynamicBgSwitch.style.right = '10px';
-        }
-    } else {
-        // 桌面设备上的布局
-        darkModeSwitch.style.left = '20px';
-        darkModeSwitch.style.right = 'auto';
-        darkModeSwitch.style.bottom = '20px';
-        darkModeSwitch.style.zIndex = '1000';
-        
-        dynamicBgSwitch.style.right = '20px';
-        dynamicBgSwitch.style.left = 'auto';
-        dynamicBgSwitch.style.bottom = '20px';
-        dynamicBgSwitch.style.zIndex = '1000';
-    }
-    
-    // 确保开关在暗模式下可见
-    darkModeSwitch.style.backgroundColor = 'var(--card-bg-color)';
-    darkModeSwitch.style.padding = '8px 12px';
-    darkModeSwitch.style.borderRadius = '8px';
-    darkModeSwitch.style.boxShadow = '0 2px 5px rgba(0,0,0,0.2)';
-    
-    dynamicBgSwitch.style.backgroundColor = 'var(--card-bg-color)';
-    dynamicBgSwitch.style.padding = '8px 12px';
-    dynamicBgSwitch.style.borderRadius = '8px';
-    dynamicBgSwitch.style.boxShadow = '0 2px 5px rgba(0,0,0,0.2)';
-}

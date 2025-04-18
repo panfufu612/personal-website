@@ -1,0 +1,202 @@
+/* 基本信息部分的样式 */
+.about-content {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #1a1a2e;
+    border-radius: 8px;
+    padding: 20px;
+    color: #e0e0e0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.profile-image {
+    flex: 0 0 160px;
+    position: relative;
+}
+
+.profile-image img {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.3);
+    border: 3px solid #3498db;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.profile-image::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.profile-image img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(52, 152, 219, 0.5);
+}
+
+.basic-info-text {
+    flex: 1;
+}
+
+/* 表格布局样式 */
+.info-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+.info-table td {
+    padding: 5px 10px;
+    vertical-align: middle;
+}
+
+.info-table tr {
+    transition: background-color 0.3s ease;
+}
+
+.info-table tr:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+.info-label {
+    font-weight: normal;
+    color: #3498db;
+    font-size: 0.9em;
+    width: 20%;
+}
+
+.info-value {
+    font-size: 1.1em;
+    font-weight: 500;
+    width: 30%;
+}
+
+/* 响应式设计调整 */
+@media (min-width: 768px) {    
+    .profile-image {
+        flex: 0 0 180px;
+    }
+    
+    .info-table {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .about-content {
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .profile-image {
+        flex: 0 0 120px;
+    }
+    
+    #basic-info.section-card {
+        padding: 15px;
+    }
+    
+    .section-card h2 {
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+    }
+    
+    .info-label {
+        font-size: 0.8em;
+    }
+    
+    .info-value {
+        font-size: 1em;
+    }
+    
+    .info-table {
+        border-spacing: 0 5px;
+    }
+}
+
+/* 移动端超小屏幕调整 */
+@media (max-width: 480px) {
+    .about-content {
+        flex-direction: column;
+        padding: 12px;
+        gap: 12px;
+    }
+    
+    .profile-image {
+        flex: 0 0 100px;
+        margin: 0 auto 15px;
+    }
+    
+    .profile-image img {
+        border-width: 2px;
+    }
+    
+    .info-table {
+        display: block;
+    }
+    
+    .info-table tr {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 8px;
+        border-bottom: 1px solid rgba(52, 152, 219, 0.2);
+        padding-bottom: 8px;
+    }
+    
+    .info-table tr:last-child {
+        margin-bottom: 0;
+        border-bottom: none;
+    }
+    
+    .info-table td {
+        padding: 3px 5px;
+    }
+    
+    .info-table td.info-label {
+        width: 30%;
+        font-size: 0.75em;
+    }
+    
+    .info-table td.info-value {
+        width: 70%;
+        font-size: 0.9em;
+    }
+}
+
+/* 最小屏幕的特殊处理 */
+@media (max-width: 360px) {
+    .about-content {
+        text-align: center;
+    }
+    
+    .info-table tr {
+        display: block;
+    }
+    
+    .info-table td {
+        display: block;
+        width: 100% !important;
+        text-align: center;
+    }
+    
+    .info-table td.info-label {
+        margin-top: 8px;
+        padding-bottom: 0;
+    }
+    
+    .info-table td.info-value {
+        padding-top: 0;
+    }
+} 

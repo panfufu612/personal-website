@@ -1,0 +1,238 @@
+/* 移动端专用样式 - 针对768px及以下屏幕 */
+@media screen and (max-width: 768px) {
+    /* 整体布局调整 */
+    body {
+        padding: 0;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+    
+    .section-card {
+        margin-bottom: 15px;
+        padding: 15px;
+    }
+    
+    /* 导航栏移动端样式 */
+    header {
+        padding: 10px 0;
+    }
+    
+    #mobile-menu-toggle {
+        display: block;
+    }
+    
+    nav#main-nav {
+        position: fixed;
+        right: -280px;
+        top: 0;
+        width: 250px;
+        height: 100vh;
+        background-color: var(--card-bg-color);
+        z-index: 1000;
+        padding: 60px 15px 15px;
+        box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+        transition: right 0.3s ease;
+        overflow-y: auto;
+    }
+    
+    nav#main-nav.show {
+        right: 0;
+    }
+    
+    nav#main-nav ul {
+        flex-direction: column;
+        padding: 0;
+    }
+    
+    nav#main-nav ul li {
+        margin: 10px 0;
+        width: 100%;
+    }
+    
+    nav#main-nav ul li a {
+        display: block;
+        padding: 12px 15px;
+        text-align: left;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 8px;
+        transition: background-color 0.3s;
+    }
+    
+    /* 导航背景 */
+    .nav-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 999;
+        display: none;
+    }
+    
+    .nav-backdrop.show {
+        display: block;
+    }
+    
+    /* 基本信息部分 */
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .profile-image {
+        margin-bottom: 15px;
+        width: 120px;
+        height: 120px;
+    }
+    
+    .basic-info-text {
+        width: 100%;
+    }
+    
+    .info-table {
+        margin-bottom: 10px;
+    }
+    
+    .info-table tr {
+        margin-bottom: 8px;
+        border-bottom: 1px dashed #ddd;
+    }
+    
+    .dark-mode .info-table tr {
+        border-bottom: 1px dashed #555;
+    }
+    
+    .info-table td.info-label {
+        flex: 0 0 100px;
+        font-weight: bold;
+        color: var(--accent-color);
+    }
+    
+    .info-table td.info-value {
+        flex: 1;
+        min-width: 150px;
+    }
+    
+    /* 可折叠部分 */
+    .collapsible-section h2 {
+        position: relative;
+        cursor: pointer;
+        padding-right: 30px;
+    }
+    
+    .collapsible-section h2::after {
+        content: '';
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 12px;
+        height: 12px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5H7z' fill='%233498db'/%3E%3C/svg%3E");
+        background-size: contain;
+        background-repeat: no-repeat;
+        transition: transform 0.3s;
+    }
+    
+    .dark-mode .collapsible-section h2::after {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5H7z' fill='%236ab0de'/%3E%3C/svg%3E");
+    }
+    
+    .collapsible-section.collapsed h2::after {
+        transform: translateY(-50%) rotate(-90deg);
+    }
+    
+    .collapsible-section .section-content {
+        overflow: hidden;
+        max-height: 2000px;
+        transition: max-height 0.5s ease;
+    }
+    
+    .collapsible-section.collapsed .section-content {
+        max-height: 0;
+    }
+    
+    /* 时间线调整 */
+    .timeline {
+        margin-left: 20px;
+    }
+    
+    .timeline-item {
+        padding-left: 15px;
+    }
+    
+    .timeline-item::before {
+        left: -20px;
+    }
+    
+    .timeline-item::after {
+        left: -11px;
+    }
+    
+    /* 技能标签调整 */
+    .skill-list {
+        gap: 8px;
+    }
+    
+    .skill-list li {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+    
+    /* 表单调整 */
+    .contact-form .form-row {
+        flex-direction: column;
+    }
+    
+    .contact-form .form-group {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    /* 开关位置调整 */
+    .theme-switch-wrapper, .dark-mode-switch-wrapper {
+        padding: 8px 12px;
+        border-radius: 8px;
+        background-color: var(--card-bg-color);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+}
+
+/* 极小屏幕特别适配 */
+@media screen and (max-width: 480px) {
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+    
+    .section-card {
+        padding: 12px;
+    }
+    
+    .info-table td.info-label,
+    .info-table td.info-value {
+        min-width: unset;
+    }
+    
+    /* 极小屏幕下，让标签和值各占一行 */
+    @media screen and (max-width: 350px) {
+        .info-table tr {
+            flex-direction: column;
+        }
+        
+        .info-table td.info-label {
+            flex: 0 0 auto;
+            width: 100%;
+            padding-bottom: 0;
+        }
+        
+        .info-table td.info-value {
+            width: 100%;
+            padding-top: 0;
+        }
+    }
+} 
