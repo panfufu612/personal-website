@@ -111,6 +111,9 @@ main {
 
 .profile-image {
     flex: 0 0 200px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .profile-image img {
